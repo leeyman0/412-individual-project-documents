@@ -1,4 +1,4 @@
-% Created 2021-03-31 Wed 21:14
+% Created 2021-04-21 Wed 20:51
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -22,15 +22,15 @@
  pdftitle={Turn-Based World Tournament --- Software Project Management Plan},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 27.1 (Org mode 9.3)}, 
+ pdfcreator={Emacs 27.2 (Org mode 9.4.4)}, 
  pdflang={English}}
 \begin{document}
 
 \maketitle
 \section{Introduction}
-\label{sec:orgffe79fd}
+\label{sec:org4481e37}
 \subsection{Project Overview}
-\label{sec:org323e73c}
+\label{sec:orgc66f76b}
  This project is to create a small browser-based game that is similar in distribution style to \url{https://agar.io}.
 The program should be easy and simple to run on many machines, the ones that support the underlying technologies 
 of websockets and the 2D canvas should do it. The game should be made with accessibility and fun in mind, and there 
@@ -46,9 +46,9 @@ mechanics that are inaccessible to some people, especially children. So, the ide
 a simple turn-based physics-based strategic fighting game, where a player would control the muscles of their own
 player in order to deplete the health-bar of the enemy, or defend themselves from some enemy.
 \subsection{Project deliverables --- Work Breakdown Structure}
-\label{sec:org020017d}
+\label{sec:orgc70ab07}
 \subsubsection{{\bfseries\sffamily TODO} General Project Organization [2/4] by March 31}
-\label{sec:org5292f79}
+\label{sec:orged2e22f}
 \begin{itemize}
 \item[{$\boxtimes$}] Tool Selection
 \item[{$\square$}] Component Graphs
@@ -59,7 +59,7 @@ player in order to deplete the health-bar of the enemy, or defend themselves fro
 \item[{$\square$}] Sign-off
 \end{itemize}
 \subsubsection{{\bfseries\sffamily TODO} Working Server/Client [0/3] by April 15}
-\label{sec:org19f5dfe}
+\label{sec:org8a5191d}
 \begin{itemize}
 \item[{$\boxminus$}] Get game internals working
 \begin{itemize}
@@ -121,7 +121,7 @@ player in order to deplete the health-bar of the enemy, or defend themselves fro
 \end{itemize}
 \end{itemize}
 \subsubsection{{\bfseries\sffamily TODO} Working Website [0/2] by April 24}
-\label{sec:org3c7324d}
+\label{sec:orgebbd741}
 \begin{itemize}
 \item[{$\square$}] Register a domain and hosting
 \begin{itemize}
@@ -132,35 +132,35 @@ player in order to deplete the health-bar of the enemy, or defend themselves fro
 \item[{$\square$}] Test it to make sure it works
 \end{itemize}
 \subsection{Reference Materials}
-\label{sec:org46be0db}
+\label{sec:orgad166e7}
 \section{Project Organization}
-\label{sec:org6fa82a1}
+\label{sec:org0bd2dc5}
 This is a one-man-project, so not much time was spent on either Managerial Process or Project Organization.
 I usually take this apprioach to projects --- if it slows me down, I lose it, and if it speeds me up, I use it.
 However, with a project on the magnitude such as this one, some elaboration is needed.
 \subsection{Process Model}
-\label{sec:orge317cfe}
+\label{sec:orgb65a7e5}
 The software process model I have chosen is the chaos model. The chaos model manages complexity by breaking
 problems into smaller sub-problems. There are two main rules to the chaos model of development.
 The first rule is, to solve big problems, solve the smaller problems that they rely on first, 
 then solve the intermediate problems that lead to the big problem being solved. The second rule is
 always work on the biggest issue first.
 \subsection{Organizational Structure}
-\label{sec:org8e984e5}
+\label{sec:org0fa4be1}
 The model of the type of this organization is self-employment.
 \subsection{Organizational Interfaces}
-\label{sec:org9dce694}
+\label{sec:org9c9290e}
 \subsubsection{Relationship to Hosting Services}
-\label{sec:org4037b52}
+\label{sec:orgea11b1c}
 The hosting services are going to be alright, as long as I pay them for their work. If enough people join, I
 might have to upgrade the hosting to a bigger Dyno for Heroku, and I might have to upgrade hosting for the frontend
 as well.
 \subsubsection{Relationship to Players of The Game}
-\label{sec:orge683a17}
+\label{sec:org488c9c1}
 The relationship to the community of this game is very important, as it is an online game community, and if they
 aren't happy, they will go somewhere else.
 \subsection{Project Responsibilities}
-\label{sec:orge74784d}
+\label{sec:orgba5ec4a}
 \begin{itemize}
 \item Deliver a smooth gaming experience
 \begin{itemize}
@@ -170,16 +170,20 @@ aren't happy, they will go somewhere else.
 \item Be responsive to user feedback --- What needs fixing?
 \end{itemize}
 \section{Managerial Process}
-\label{sec:org92917ce}
+\label{sec:orgd8cc9ae}
 \subsection{Change Management}
-\label{sec:org8ff4f55}
+\label{sec:orgc19c968}
 To manage change in the development process, all serious technological changes will be made before programming.
 Minor changes can be made during the development process, of course, but once I am set on a method, tool,
-or technique, I cannot change it. 
+or technique, I cannot change it.
+
+\textbf{Addendum: Apr 21, 2021.}
+Because of unforseen issues with developing the game, I have decided to make a different game that is easier to
+implement. More changes to the project check list will come soon.
 \section{Technical Process}
-\label{sec:org75f4778}
+\label{sec:orgbd057ce}
 \subsection{Methods, Tools, and Techniques}
-\label{sec:orga77917a}
+\label{sec:orgad090a5}
 I plan to use these tools on this project:
 \begin{itemize}
 \item Javascript

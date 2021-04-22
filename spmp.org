@@ -100,7 +100,11 @@ aren't happy, they will go somewhere else.
 ** Change Management
 To manage change in the development process, all serious technological changes will be made before programming.
 Minor changes can be made during the development process, of course, but once I am set on a method, tool,
-or technique, I cannot change it. 
+or technique, I cannot change it.
+
+*Addendum: Apr 21, 2021.*
+Because of unforseen issues with developing the game, I have decided to make a different game that is easier to
+implement. More changes to the project check list will come soon.
 * Technical Process
 ** Methods, Tools, and Techniques
 I plan to use these tools on this project:
