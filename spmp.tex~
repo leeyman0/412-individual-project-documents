@@ -1,0 +1,215 @@
+% Created 2021-03-31 Wed 20:57
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Stanley C. Kemp}
+\date{\today}
+\title{Turn-Based World Tournament --- Software Project Management Plan}
+\hypersetup{
+ pdfauthor={Stanley C. Kemp},
+ pdftitle={Turn-Based World Tournament --- Software Project Management Plan},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.3)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\section{Introduction}
+\label{sec:org1e2e7ff}
+\subsection{Project Overview}
+\label{sec:org334864b}
+ This project is to create a small browser-based game that is similar in distribution style to \url{https://agar.io}.
+The program should be easy and simple to run on many machines, the ones that support the underlying technologies 
+of websockets and the 2D canvas should do it. The game should be made with accessibility and fun in mind, and there 
+should be multiplayer interactivity.
+
+When coming up with the idea for this website,
+I thought: what do people usually lack when trying to play online games? Skill, to be sure, but other than that
+the main problem is lag. This can be very challenging to play past when participating in games like \emph{Fortnite} or
+online fighting games. Most of the world lives with low-quality internet, or no internet at all. 
+
+Turn-based games do not necessarily have these problems, or not in large quantities. But often, they have complex
+mechanics that are inaccessible to some people, especially children. So, the idea I had was to make 
+a simple turn-based physics-based strategic fighting game, where a player would control the muscles of their own
+player in order to deplete the health-bar of the enemy, or defend themselves from some enemy.
+\subsection{Project deliverables --- Work Breakdown Structure}
+\label{sec:orgec46852}
+\subsubsection{{\bfseries\sffamily TODO} General Project Organization [2/4]}
+\label{sec:org98427b5}
+\begin{itemize}
+\item[{$\boxtimes$}] Tool Selection
+\item[{$\square$}] Component Graphs
+\item[{$\boxtimes$}] Fill out SPMP
+\begin{itemize}
+\item[{$\boxtimes$}] Timeline
+\end{itemize}
+\item[{$\square$}] Sign-off
+\end{itemize}
+\subsubsection{{\bfseries\sffamily TODO} Working Server/Client [0/3]}
+\label{sec:org05f69b8}
+\begin{itemize}
+\item[{$\boxminus$}] Get game internals working
+\begin{itemize}
+\item[{$\boxminus$}] Connection
+\begin{itemize}
+\item[{$\square$}] HTTPS connection
+\item[{$\boxtimes$}] WebSocket connection
+\item[{$\square$}] 
+\end{itemize}
+\item[{$\boxminus$}] Matchmaking
+\begin{itemize}
+\item[{$\boxtimes$}] Get server to make matches without many race conditions
+\item[{$\boxtimes$}] Tell people who their partner is
+\item[{$\square$}] Requeue people when they are
+\end{itemize}
+\item[{$\square$}] Game [0/2]
+\begin{itemize}
+\item[{$\square$}] Server
+\begin{itemize}
+\item[{$\square$}] Transmission of turns to the other player
+\item[{$\square$}] Sanitization of data
+\end{itemize}
+\item[{$\square$}] Client
+\begin{itemize}
+\item[{$\square$}] Application of data
+\item[{$\square$}] Recognition of current game state
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\item[{$\boxminus$}] Get graphics and a user interface working
+\begin{itemize}
+\item[{$\square$}] Buttons
+\item[{$\boxminus$}] Time limit
+\begin{itemize}
+\item[{$\boxtimes$}] Decide whether a time limit is really necessary.
+\item[{$\square$}] Implement time limit
+\item[{$\square$}] Synchronize from server to client
+\item[{$\square$}] Implement server-client connection diagnosis through the ping.
+\end{itemize}
+\item[{$\square$}] Canvas Display [0\%]
+\begin{itemize}
+\item[{$\square$}] Display Components of models
+\item[{$\square$}] Display current Health
+\end{itemize}
+\end{itemize}
+\item[{$\square$}] Implement a physics engine
+\begin{itemize}
+\item[{$\square$}] Implement Bricks
+\begin{itemize}
+\item Weight
+\item Friction
+\item Velocity
+\item Rotation
+\item Acceleration
+\item Momentum
+\end{itemize}
+\item[{$\square$}] Implement Gravity
+\item[{$\square$}] Implement Joints and Structures
+\end{itemize}
+\end{itemize}
+\subsubsection{{\bfseries\sffamily TODO} Working Website [0/2]}
+\label{sec:org940b1f4}
+\begin{itemize}
+\item[{$\square$}] Register a domain and hosting
+\begin{itemize}
+\item[{$\square$}] Upload \texttt{index.html} and \texttt{index.js} frontend to the server
+\item[{$\square$}] Register for Back-end hosting with \texttt{Heroku}
+\item[{$\square$}] Figure out how to connect the front-end to the back-end and then do it.
+\end{itemize}
+\item[{$\square$}] Test it to make sure it works
+\end{itemize}
+\subsection{Reference Materials}
+\label{sec:org1958e09}
+\section{Project Organization}
+\label{sec:org453e959}
+This is a one-man-project, so not much time was spent on either Managerial Process or Project Organization.
+I usually take this apprioach to projects --- if it slows me down, I lose it, and if it speeds me up, I use it.
+However, with a project on the magnitude such as this one, some elaboration is needed.
+\subsection{Process Model}
+\label{sec:org2361aa5}
+The software process model I have chosen is the chaos model. The chaos model manages complexity by breaking
+problems into smaller sub-problems. There are two main rules to the chaos model of development.
+The first rule is, to solve big problems, solve the smaller problems that they rely on first, 
+then solve the intermediate problems that lead to the big problem being solved. The second rule is
+always work on the biggest issue first.
+\subsection{Organizational Structure}
+\label{sec:orgcf79e83}
+The model of the type of this organization is self-employment.
+\subsection{Organizational Interfaces}
+\label{sec:orgcc1394f}
+\subsubsection{Relationship to Hosting Services}
+\label{sec:org2829f52}
+The hosting services are going to be alright, as long as I pay them for their work. If enough people join, I
+might have to upgrade the hosting to a bigger Dyno for heroku, and I might have to upgrade hosting for the frontend
+as well.
+\subsubsection{Relationship to Players of The Game}
+\label{sec:orgeec93f1}
+The relationship to the community of this game is very important, as it is an online game community, and if they
+aren't happy, they will go somewhere else.
+\subsection{Project Responsibilities}
+\label{sec:org4752e30}
+\begin{itemize}
+\item Deliver a smooth gaming experience
+\begin{itemize}
+\item Deliver a quick gaming experience
+\end{itemize}
+\item Deliver an accessible gaming experience
+\item Be responsive to user feedback --- What needs fixing?
+\end{itemize}
+\section{Managerial Process}
+\label{sec:org472ffa3}
+\subsection{Change Management}
+\label{sec:org71e8b2a}
+To manage change in the development process, all serious technological changes will be made before programming.
+Minor changes can be made during the development process, of course, but once I am set on a method, tool,
+or technique, I cannot change it. 
+\section{Technical Process}
+\label{sec:org7f4266a}
+\subsection{Methods, Tools, and Techniques}
+\label{sec:orgafd799c}
+I plan to use these tools on this project:
+\begin{itemize}
+\item Javascript
+\begin{itemize}
+\item \texttt{Node.js} --- server backend framework for Javascript
+\begin{itemize}
+\item \texttt{npm} --- Node Package manager
+\begin{itemize}
+\item \texttt{ws} --- websocket package
+\end{itemize}
+\end{itemize}
+\item Browser-based
+\begin{itemize}
+\item The built-in websocket API
+\item The built-in 2D canvas API (or the alternative --- SVG API)
+\end{itemize}
+\end{itemize}
+\item WebSockets --- To allow full-duplex communication between the client and a server
+\item HTML/CSS (minimal usage)
+\item SVG or Canvas
+\item Git
+\item Heroku
+\item Development tools
+\begin{itemize}
+\item Firefox
+\item EMACS (for writing the software/documenting the project process)
+\begin{itemize}
+\item Javascript Mode
+\item Org Mode
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{document}

@@ -1,0 +1,83 @@
+#+TITLE: Turn-Based World Tournament --- Software Project Management Plan
+#+AUTHOR: Stanley C. Kemp
+#+OPTIONS: toc:nil
+* Introduction
+** Project Overview
+ This project is to create a small browser-based game that is similar in distribution style to [[https://agar.io]].
+The program should be easy and simple to run on many machines, the ones that support the underlying technologies 
+of websockets and the 2D canvas should do it. The game should be made with accessibility and fun in mind, and there 
+should be multiplayer interactivity.
+** Project deliverables
+*** TODO General Project Organization [1/4]
+    DEADLINE: <2021-03-31 Wed>
+    - [X] Tool Selection
+    - [ ] Component Graphs
+    - [ ] Fill out SPMP
+      - [ ] Timeline
+    - [ ] Sign-off
+*** TODO Working Server/Client [0/2] 
+    DEADLINE: <2021-04-15 Thu>
+    - [ ] Get game internals working
+      - [ ] Connection
+	- [ ] 
+      - [ ] Matchmaking
+	- [ ] Get server to make matches without many race conditions
+	- [ ] Tell people who their partner is
+      - [ ] Game [0/2]
+	- [ ] Server
+	  - [ ] Transmission of turns to the other player
+	  - [ ] Sanitization of data
+	- [ ] Client
+	  - [ ] Application of data
+	  - [ ] Recognition of current game state
+    - [-] Get graphics and a user interface working
+      - [ ] Buttons
+      - [-] Time limit
+	- [X] Decide whether a time limit is really necessary.
+	- [ ] Implement
+	- [ ] Synchronize from server to client
+      - [ ] Canvas Display [0%]
+	- [ ] Display Components of models
+	- [ ] Display current Health
+*** TODO Working Website [0/4]
+    DEADLINE: <2021-04-24 Sat>
+    - [ ] Register for front-end website hosting
+      - [ ] Decide what front-end to use based on what is free
+      - [ ] Upload ~index.html~ and ~index.js~ to the server
+    - [ ] Register for Back-end hosting with ~Heroku~
+    - [ ] Figure out how to connect the front-end to the back-end and then do it.
+    - [ ] Test it
+** Evolution of The Software Project Management Plan
+** Reference Materials
+* Project Organization
+This is a one-man-project, so not much time was spent on either Managerial Process or Project Organization.
+I usually take this apprioach to projects --- if it slows me down, I lose it, and if it speeds me up, I use it.
+However, with a project on the magnitude such as this one, some elaboration is needed.
+** Process Model
+** Organizational Structure
+The model of the type of this organization is self-employment.
+** Organizational Interfaces
+*** Relationship to Hosting Services
+*** Relationship to Players of The Game
+** Project Responsibilities
+- Deliver a smooth gaming experience
+  - Deliver a quick gaming experience
+- Deliver an accessible gaming experience
+- Be responsive to user feedback --- What needs fixing
+* Managerial Process
+** Risk management
+
+* Technical Process
+** Methods, Tools, and Techniques
+I plan to use these tools on this project:
++ Javascript
+  + ~Node.js~ --- server backend framework for Javascript
+    + ~npm~ --- Node Package manager
+      + ~ws~ --- websocket package
+  + Browser-based
+    + The built-in websocket API
+    + The built-in 2D canvas API
++ WebSockets --- To allow full-duplex communication between the client and a server
++ HTML/CSS (minimal usage)
++ Git
++ Heroku (possibly)
