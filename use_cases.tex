@@ -1,4 +1,4 @@
-% Created 2021-03-31 Wed 17:06
+% Created 2021-04-24 Sat 20:25
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -22,30 +22,34 @@
  pdftitle={},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 27.1 (Org mode 9.3)}, 
+ pdfcreator={Emacs 27.2 (Org mode 9.4.4)}, 
  pdflang={English}}
 \begin{document}
 
 \tableofcontents
 
-\section{User}
-\label{sec:orgcc343a5}
-\begin{enumerate}
+\section{Unauthenticated User}
+\label{sec:orgaf5641d}
+\begin{itemize}
 \item The User Loads The Page
-\begin{enumerate}
+\begin{itemize}
 \item The User is prompted to enter a username
 \item The Username is sent to the server
 \item The Server checks to see if there is a person with that name
 \item The Server sends affirmations back to the client if the name is not taken
-\begin{enumerate}
+\begin{itemize}
 \item Exception: the username is taken
 \item The User changes their name
-\end{enumerate}
+\end{itemize}
 \item The Server enters the user into the queue to wait for a match
 \item The matchmaker makes the match between two users
-\end{enumerate}
+\end{itemize}
+\end{itemize}
+\section{Authenticated User --- In Game}
+\label{sec:org33edf11}
+\begin{itemize}
 \item The User Enters A Turn
-\begin{enumerate}
+\begin{itemize}
 \item The User Receives The Current State of The Game From The Server
 \item The client renders the interface using the Canvas API
 \item The User Interacts with The Interface to set up the next turn
@@ -53,36 +57,36 @@
 \item The server waits for the other player, if he hasn't responded already
 \item The server test-renders the data
 \item The Server sends out the response
-\begin{enumerate}
+\begin{itemize}
 \item If one of the players has won
 \item The total state changes
-\end{enumerate}
-\end{enumerate}
+\end{itemize}
+\end{itemize}
 \item The Client Is Sent A Ping In Game
-\begin{enumerate}
+\begin{itemize}
 \item The user does not reply ping
-\begin{enumerate}
+\begin{itemize}
 \item Exception: the user does reply
 \item Nothing happens
-\end{enumerate}
+\end{itemize}
 \item Close the user's game in the server system and notify the other player that the other 
 player has won by default
-\end{enumerate}
+\end{itemize}
 \item The User Has Won The Game
-\begin{enumerate}
+\begin{itemize}
 \item The client displays a victory message
 \item The user pushes a button to go to the next game
 \item The user enters the matchmaking queue again
-\end{enumerate}
-\end{enumerate}
+\end{itemize}
+\end{itemize}
 \section{Admin}
-\label{sec:orgd7ad0c6}
-\begin{enumerate}
-\item There is a Bug in The Server or an Update needs to be done
-\begin{enumerate}
+\label{sec:orga7e3492}
+\begin{itemize}
+\item There is a Bug or Design Flaw in The Server
+\begin{itemize}
 \item The server is shut down
-\item Necessary changes are made to the front-end and the back-end
+\item The programmer makes Necessary changes are made to the front-end and the back-end
 \item The server is rebooted with the necessary changes
-\end{enumerate}
-\end{enumerate}
+\end{itemize}
+\end{itemize}
 \end{document}

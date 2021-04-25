@@ -1,4 +1,4 @@
-% Created 2021-04-21 Wed 20:51
+% Created 2021-04-24 Sat 20:25
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -16,10 +16,10 @@
 \usepackage{hyperref}
 \author{Stanley C. Kemp}
 \date{\today}
-\title{Turn-Based World Tournament --- Software Project Management Plan}
+\title{Automat a Football Game --- Software Project Management Plan}
 \hypersetup{
  pdfauthor={Stanley C. Kemp},
- pdftitle={Turn-Based World Tournament --- Software Project Management Plan},
+ pdftitle={Automat a Football Game --- Software Project Management Plan},
  pdfkeywords={},
  pdfsubject={},
  pdfcreator={Emacs 27.2 (Org mode 9.4.4)}, 
@@ -28,9 +28,9 @@
 
 \maketitle
 \section{Introduction}
-\label{sec:org4481e37}
-\subsection{Project Overview}
-\label{sec:orgc66f76b}
+\label{sec:orge253e25}
+\subsection{Project Overview and History}
+\label{sec:orgcd7c887}
  This project is to create a small browser-based game that is similar in distribution style to \url{https://agar.io}.
 The program should be easy and simple to run on many machines, the ones that support the underlying technologies 
 of websockets and the 2D canvas should do it. The game should be made with accessibility and fun in mind, and there 
@@ -45,122 +45,111 @@ Turn-based games do not necessarily have these problems, or not in large quantit
 mechanics that are inaccessible to some people, especially children. So, the idea I had was to make 
 a simple turn-based physics-based strategic fighting game, where a player would control the muscles of their own
 player in order to deplete the health-bar of the enemy, or defend themselves from some enemy.
+
+But unfortunately, there was a large problem with the scope of this project.
+None of the javascript physics engines had the things that I wanted to have out of the box,
+and learning them was a hassle. So, I decided that if I was going to build this, then I had to create my own.
+I had thought that building a small physics engine would be easier than building a large one, but I did not know
+what I had to build. Turns out it was extremely difficult. I spent a week and a half on the physics before realizing
+that I wasn't going to have it done in time for the deadline.
+
+I needed a new goal, and quick!
+
+So I thought: what would be simple to \emph{implement}, in addition to the previous qualities that I had thought about
+before? Text-based games would be pretty simple to implement, but that would require a story or some form of
+language recognition --- not easy to implement --- and text games are often impenetrable, relative to games with
+graphics. Furthermore, I would need to do something on the server-side of things, as it was one of the requirements
+laid out to me by the professor.
+
+So, the idea that I came up with was to make a game based on Conway's Game of Life. The user game complexity would
+have to go up somewhat, because of the nature of the game, but not too much, to make it too difficult to understand.
+The engine behind it could be implemented within a matter of hours, and this made my job much easier than it was with
+a physics-based game.
+
+\subsection{Game Premise/Design}
+\label{sec:orgd0c5e4a}
+The turn-based aspect of the original design remains the same, allowing the backend code reuse. The goal for this game
+is simple --- have the most cells make it to your opponent's endzone. There would be a predetermined small number of
+turns, to keep games short and snappy. For each turn there are two parts, one where players build their mechanisms,
+and one where players can't do anything, but the computer would simulate a large number of turns for the player.
+Because of the nature of Conway's game of life, players could score own goals.
+
 \subsection{Project deliverables --- Work Breakdown Structure}
-\label{sec:orgc70ab07}
-\subsubsection{{\bfseries\sffamily TODO} General Project Organization [2/4] by March 31}
-\label{sec:orged2e22f}
+\label{sec:orgec903cb}
+\subsubsection{{\bfseries\sffamily TODO} General Project Organization by April 27}
+\label{sec:orgb6dd73f}
 \begin{itemize}
-\item[{$\boxtimes$}] Tool Selection
-\item[{$\square$}] Component Graphs
-\item[{$\boxtimes$}] Fill out SPMP
+\item[{$\boxtimes$}] Update SPMP
 \begin{itemize}
 \item[{$\boxtimes$}] Timeline
+\item[{$\boxtimes$}] Explain what happened in the evolution of the project
+\item[{$\boxtimes$}] Update other portions of the SPMP according to the instructions
 \end{itemize}
-\item[{$\square$}] Sign-off
-\end{itemize}
-\subsubsection{{\bfseries\sffamily TODO} Working Server/Client [0/3] by April 15}
-\label{sec:org8a5191d}
+\item[{$\boxtimes$}] Update Use Cases
 \begin{itemize}
-\item[{$\boxminus$}] Get game internals working
-\begin{itemize}
-\item[{$\boxminus$}] Connection
-\begin{itemize}
-\item[{$\square$}] HTTPS connection
-\item[{$\boxtimes$}] WebSocket connection
-\item[{$\square$}] 
+\item[{$\boxtimes$}] Add Authenticated/Unauthenticated user
+\item[{$\boxtimes$}] Add Extra Admin Criterion
 \end{itemize}
-\item[{$\boxminus$}] Matchmaking
+\item[{$\square$}] GANNT Chart
+\item[{$\square$}] System Test Procedure
+\item[{$\square$}] Milestone Review
+\end{itemize}
+\subsubsection{{\bfseries\sffamily TODO} Working Website by May 3}
+\label{sec:orgf002f4e}
 \begin{itemize}
-\item[{$\boxtimes$}] Get server to make matches without many race conditions
-\item[{$\boxtimes$}] Tell people who their partner is
-\item[{$\square$}] Requeue people when they are
-\end{itemize}
-\item[{$\square$}] Game [0/2]
+\item[{$\boxtimes$}] Get underlying algorithm for Conway's game of Life up and running
+\item[{$\square$}] Make front-end
 \begin{itemize}
-\item[{$\square$}] Server
+\item[{$\square$}] Name entry/Introduction
+\item[{$\square$}] Game queue
+\item[{$\square$}] Game
+\item[{$\square$}] Practice Mode
+\end{itemize}
+\item[{$\boxminus$}] Make backend
 \begin{itemize}
-\item[{$\square$}] Transmission of turns to the other player
-\item[{$\square$}] Sanitization of data
+\item[{$\boxtimes$}] Name System
+\item[{$\boxtimes$}] Matchmaking
+\item[{$\square$}] Moves
+\item[{$\square$}] Victory/Defeat/Disconnection
 \end{itemize}
-\item[{$\square$}] Client
+\item[{$\square$}] Connect the Frontend to the Backend
 \begin{itemize}
-\item[{$\square$}] Application of data
-\item[{$\square$}] Recognition of current game state
+\item[{$\square$}] Develop a shared JSON code system, codes for each thing happening
+\item[{$\square$}] Get connection working through websockets
 \end{itemize}
-\end{itemize}
-\end{itemize}
-\item[{$\boxminus$}] Get graphics and a user interface working
-\begin{itemize}
-\item[{$\square$}] Buttons
-\item[{$\boxminus$}] Time limit
-\begin{itemize}
-\item[{$\boxtimes$}] Decide whether a time limit is really necessary.
-\item[{$\square$}] Implement time limit
-\item[{$\square$}] Synchronize from server to client
-\item[{$\square$}] Implement server-client connection diagnosis through the ping.
-\end{itemize}
-\item[{$\square$}] Canvas Display [0\%]
-\begin{itemize}
-\item[{$\square$}] Display Components of models
-\item[{$\square$}] Display current Health
-\end{itemize}
-\end{itemize}
-\item[{$\square$}] Implement a physics engine
-\begin{itemize}
-\item[{$\square$}] Implement Bricks
-\begin{itemize}
-\item Weight
-\item Friction
-\item Velocity
-\item Rotation
-\item Acceleration
-\item Momentum
-\end{itemize}
-\item[{$\square$}] Implement Gravity
-\item[{$\square$}] Implement Joints and Structures
-\end{itemize}
-\end{itemize}
-\subsubsection{{\bfseries\sffamily TODO} Working Website [0/2] by April 24}
-\label{sec:orgebbd741}
-\begin{itemize}
-\item[{$\square$}] Register a domain and hosting
-\begin{itemize}
-\item[{$\square$}] Upload \texttt{index.html} and \texttt{index.js} frontend to the server
-\item[{$\square$}] Register for Back-end hosting with \texttt{Heroku}
-\item[{$\square$}] Figure out how to connect the front-end to the back-end and then do it.
-\end{itemize}
-\item[{$\square$}] Test it to make sure it works
+\item[{$\square$}] Buy a website name
+\item[{$\square$}] Deploy to Heroku
 \end{itemize}
 \subsection{Reference Materials}
-\label{sec:orgad166e7}
+\label{sec:orgcc7f1ae}
 \section{Project Organization}
-\label{sec:org0bd2dc5}
+\label{sec:org807d7d8}
 This is a one-man-project, so not much time was spent on either Managerial Process or Project Organization.
 I usually take this apprioach to projects --- if it slows me down, I lose it, and if it speeds me up, I use it.
 However, with a project on the magnitude such as this one, some elaboration is needed.
 \subsection{Process Model}
-\label{sec:orgb65a7e5}
+\label{sec:org3c03746}
 The software process model I have chosen is the chaos model. The chaos model manages complexity by breaking
 problems into smaller sub-problems. There are two main rules to the chaos model of development.
 The first rule is, to solve big problems, solve the smaller problems that they rely on first, 
 then solve the intermediate problems that lead to the big problem being solved. The second rule is
 always work on the biggest issue first.
 \subsection{Organizational Structure}
-\label{sec:org0fa4be1}
+\label{sec:orgec1757e}
 The model of the type of this organization is self-employment.
 \subsection{Organizational Interfaces}
-\label{sec:org9c9290e}
+\label{sec:orge6e07c2}
 \subsubsection{Relationship to Hosting Services}
-\label{sec:orgea11b1c}
+\label{sec:orgd3aaa0f}
 The hosting services are going to be alright, as long as I pay them for their work. If enough people join, I
 might have to upgrade the hosting to a bigger Dyno for Heroku, and I might have to upgrade hosting for the frontend
 as well.
 \subsubsection{Relationship to Players of The Game}
-\label{sec:org488c9c1}
+\label{sec:orga87a640}
 The relationship to the community of this game is very important, as it is an online game community, and if they
 aren't happy, they will go somewhere else.
 \subsection{Project Responsibilities}
-\label{sec:orgba5ec4a}
+\label{sec:orgddfc7f8}
 \begin{itemize}
 \item Deliver a smooth gaming experience
 \begin{itemize}
@@ -169,10 +158,24 @@ aren't happy, they will go somewhere else.
 \item Deliver an accessible gaming experience
 \item Be responsive to user feedback --- What needs fixing?
 \end{itemize}
+\subsection{Low-Level Responsibilities}
+\label{sec:org9c0ba7a}
+\begin{itemize}
+\item Programmer
+\begin{itemize}
+\item Aware of time
+\item Aware of the general state of the project
+\item Aware of the code and the bugs inside
+\end{itemize}
+\item Admin
+\begin{itemize}
+\item Report to the programmer possible bugs/design flaws
+\end{itemize}
+\end{itemize}
 \section{Managerial Process}
-\label{sec:orgd8cc9ae}
+\label{sec:org381ea91}
 \subsection{Change Management}
-\label{sec:orgc19c968}
+\label{sec:org4b02aaa}
 To manage change in the development process, all serious technological changes will be made before programming.
 Minor changes can be made during the development process, of course, but once I am set on a method, tool,
 or technique, I cannot change it.
@@ -180,10 +183,13 @@ or technique, I cannot change it.
 \textbf{Addendum: Apr 21, 2021.}
 Because of unforseen issues with developing the game, I have decided to make a different game that is easier to
 implement. More changes to the project check list will come soon.
+
+\textbf{Sub-Addendum: Apr 24, 2021.}
+Changes are now complete. 
 \section{Technical Process}
-\label{sec:orgbd057ce}
+\label{sec:org089bd56}
 \subsection{Methods, Tools, and Techniques}
-\label{sec:orgad090a5}
+\label{sec:orgfe8e940}
 I plan to use these tools on this project:
 \begin{itemize}
 \item Javascript
@@ -202,7 +208,7 @@ I plan to use these tools on this project:
 \end{itemize}
 \end{itemize}
 \item WebSockets --- To allow full-duplex communication between the client and a server
-\item HTML/CSS (minimal usage)
+\item HTML/CSS
 \item SVG or Canvas
 \item Git
 \item Heroku

@@ -1,8 +1,8 @@
-#+TITLE: Turn-Based World Tournament --- Software Project Management Plan
+#+TITLE: Automat a Football Game --- Software Project Management Plan
 #+AUTHOR: Stanley C. Kemp
 #+OPTIONS: toc:nil
 * Introduction
-** Project Overview
+** Project Overview and History
  This project is to create a small browser-based game that is similar in distribution style to [[https://agar.io]].
 The program should be easy and simple to run on many machines, the ones that support the underlying technologies 
 of websockets and the 2D canvas should do it. The game should be made with accessibility and fun in mind, and there 
@@ -17,59 +17,63 @@ Turn-based games do not necessarily have these problems, or not in large quantit
 mechanics that are inaccessible to some people, especially children. So, the idea I had was to make 
 a simple turn-based physics-based strategic fighting game, where a player would control the muscles of their own
 player in order to deplete the health-bar of the enemy, or defend themselves from some enemy.
+
+But unfortunately, there was a large problem with the scope of this project.
+None of the javascript physics engines had the things that I wanted to have out of the box,
+and learning them was a hassle. So, I decided that if I was going to build this, then I had to create my own.
+I had thought that building a small physics engine would be easier than building a large one, but I did not know
+what I had to build. Turns out it was extremely difficult. I spent a week and a half on the physics before realizing
+that I wasn't going to have it done in time for the deadline.
+
+I needed a new goal, and quick!
+
+So I thought: what would be simple to /implement/, in addition to the previous qualities that I had thought about
+before? Text-based games would be pretty simple to implement, but that would require a story or some form of
+language recognition --- not easy to implement --- and text games are often impenetrable, relative to games with
+graphics. Furthermore, I would need to do something on the server-side of things, as it was one of the requirements
+laid out to me by the professor.
+
+So, the idea that I came up with was to make a game based on Conway's Game of Life. The user game complexity would
+have to go up somewhat, because of the nature of the game, but not too much, to make it too difficult to understand.
+The engine behind it could be implemented within a matter of hours, and this made my job much easier than it was with
+a physics-based game.
+
+** Game Premise/Design
+The turn-based aspect of the original design remains the same, allowing the backend code reuse. The goal for this game
+is simple --- have the most cells make it to your opponent's endzone. There would be a predetermined small number of
+turns, to keep games short and snappy. For each turn there are two parts, one where players build their mechanisms,
+and one where players can't do anything, but the computer would simulate a large number of turns for the player.
+Because of the nature of Conway's game of life, players could score own goals.
+
 ** Project deliverables --- Work Breakdown Structure
-*** TODO General Project Organization [2/4] by March 31
-    DEADLINE: <2021-03-31 Wed>
-    - [X] Tool Selection
-    - [ ] Component Graphs
-    - [X] Fill out SPMP
+*** TODO General Project Organization by April 27
+    - [X] Update SPMP
       - [X] Timeline
-    - [ ] Sign-off
-*** TODO Working Server/Client [0/3] by April 15
-    DEADLINE: <2021-04-15 Thu>
-    - [-] Get game internals working
-      - [-] Connection
-	- [ ] HTTPS connection
-	- [X] WebSocket connection
-	- [ ] 
-      - [-] Matchmaking
-	- [X] Get server to make matches without many race conditions
-	- [X] Tell people who their partner is
-	- [ ] Requeue people when they are
-      - [ ] Game [0/2]
-	- [ ] Server
-	  - [ ] Transmission of turns to the other player
-	  - [ ] Sanitization of data
-	- [ ] Client
-	  - [ ] Application of data
-	  - [ ] Recognition of current game state
-    - [-] Get graphics and a user interface working
-      - [ ] Buttons
-      - [-] Time limit
-	- [X] Decide whether a time limit is really necessary.
-	- [ ] Implement time limit
-	- [ ] Synchronize from server to client
-	- [ ] Implement server-client connection diagnosis through the ping.
-      - [ ] Canvas Display [0%]
-	- [ ] Display Components of models
-	- [ ] Display current Health
-    - [ ] Implement a physics engine
-      - [ ] Implement Bricks
-	- Weight
-	- Friction
-	- Velocity
-	- Rotation
-	- Acceleration
-	- Momentum
-      - [ ] Implement Gravity
-      - [ ] Implement Joints and Structures
-*** TODO Working Website [0/2] by April 24
-    DEADLINE: <2021-04-24 Sat>
-    - [ ] Register a domain and hosting
-      - [ ] Upload ~index.html~ and ~index.js~ frontend to the server
-      - [ ] Register for Back-end hosting with ~Heroku~
-      - [ ] Figure out how to connect the front-end to the back-end and then do it.
-    - [ ] Test it to make sure it works
+      - [X] Explain what happened in the evolution of the project
+      - [X] Update other portions of the SPMP according to the instructions
+    - [X] Update Use Cases
+      - [X] Add Authenticated/Unauthenticated user
+      - [X] Add Extra Admin Criterion
+    - [ ] GANNT Chart
+    - [ ] System Test Procedure
+    - [ ] Milestone Review
+*** TODO Working Website by May 3
+    - [X] Get underlying algorithm for Conway's game of Life up and running
+    - [ ] Make front-end
+      - [ ] Name entry/Introduction
+      - [ ] Game queue
+      - [ ] Game
+      - [ ] Practice Mode
+    - [-] Make backend
+      - [X] Name System
+      - [X] Matchmaking
+      - [ ] Moves
+      - [ ] Victory/Defeat/Disconnection
+    - [ ] Connect the Frontend to the Backend
+      - [ ] Develop a shared JSON code system, codes for each thing happening
+      - [ ] Get connection working through websockets
+    - [ ] Buy a website name
+    - [ ] Deploy to Heroku
 ** Reference Materials
 * Project Organization
 This is a one-man-project, so not much time was spent on either Managerial Process or Project Organization.
@@ -96,6 +100,13 @@ aren't happy, they will go somewhere else.
   - Deliver a quick gaming experience
 - Deliver an accessible gaming experience
 - Be responsive to user feedback --- What needs fixing?
+** Low-Level Responsibilities
+   - Programmer
+     - Aware of time
+     - Aware of the general state of the project
+     - Aware of the code and the bugs inside
+   - Admin
+     - Report to the programmer possible bugs/design flaws
 * Managerial Process
 ** Change Management
 To manage change in the development process, all serious technological changes will be made before programming.
@@ -105,6 +116,9 @@ or technique, I cannot change it.
 *Addendum: Apr 21, 2021.*
 Because of unforseen issues with developing the game, I have decided to make a different game that is easier to
 implement. More changes to the project check list will come soon.
+
+*Sub-Addendum: Apr 24, 2021.*
+Changes are now complete. 
 * Technical Process
 ** Methods, Tools, and Techniques
 I plan to use these tools on this project:
@@ -116,7 +130,7 @@ I plan to use these tools on this project:
     + The built-in websocket API
     + The built-in 2D canvas API (or the alternative --- SVG API)
 + WebSockets --- To allow full-duplex communication between the client and a server
-+ HTML/CSS (minimal usage)
++ HTML/CSS
 + SVG or Canvas
 + Git
 + Heroku

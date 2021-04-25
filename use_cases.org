@@ -1,35 +1,36 @@
-* User
-A. The User Loads The Page
-   A. The User is prompted to enter a username
-   B. The Username is sent to the server
-   C. The Server checks to see if there is a person with that name
-   D. The Server sends affirmations back to the client if the name is not taken
-      A. Exception: the username is taken
-      B. The User changes their name
-   E. The Server enters the user into the queue to wait for a match
-   F. The matchmaker makes the match between two users
-B. The User Enters A Turn
-   A. The User Receives The Current State of The Game From The Server
-   B. The client renders the interface using the Canvas API
-   C. The User Interacts with The Interface to set up the next turn
-   D. The User sends the data to The Server
-   E. The server waits for the other player, if he hasn't responded already
-   F. The server test-renders the data
-   G. The Server sends out the response
-      A. If one of the players has won
-      B. The total state changes
-C. The Client Is Sent A Ping In Game
-   A. The user does not reply ping
-      A. Exception: the user does reply
-      B. Nothing happens
-   B. Close the user's game in the server system and notify the other player that the other 
-      player has won by default
-D. The User Has Won The Game
-   A. The client displays a victory message
-   B. The user pushes a button to go to the next game
-   C. The user enters the matchmaking queue again
+* Unauthenticated User
+- The User Loads The Page
+  - The User is prompted to enter a username
+  - The Username is sent to the server
+  - The Server checks to see if there is a person with that name
+  - The Server sends affirmations back to the client if the name is not taken
+    - Exception: the username is taken
+    - The User changes their name
+  - The Server enters the user into the queue to wait for a match
+  - The matchmaker makes the match between two users
+* Authenticated User --- In Game
+- The User Enters A Turn
+  - The User Receives The Current State of The Game From The Server
+  - The client renders the interface using the Canvas API
+  - The User Interacts with The Interface to set up the next turn
+  - The User sends the data to The Server
+  - The server waits for the other player, if he hasn't responded already
+  - The server test-renders the data
+  - The Server sends out the response
+    - If one of the players has won
+    - The total state changes
+- The Client Is Sent A Ping In Game
+  - The user does not reply ping
+    - Exception: the user does reply
+    - Nothing happens
+  - Close the user's game in the server system and notify the other player that the other 
+    player has won by default
+- The User Has Won The Game
+  - The client displays a victory message
+  - The user pushes a button to go to the next game
+  - The user enters the matchmaking queue again
 * Admin
-A. There is a Bug in The Server or an Update needs to be done
-   A. The server is shut down
-   B. Necessary changes are made to the front-end and the back-end
-   C. The server is rebooted with the necessary changes
+- There is a Bug or Design Flaw in The Server
+  - The server is shut down
+  - The programmer makes Necessary changes are made to the front-end and the back-end
+  - The server is rebooted with the necessary changes
