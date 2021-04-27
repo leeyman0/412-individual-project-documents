@@ -1,0 +1,131 @@
+% Created 2021-04-26 Mon 23:59
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Stanley C. Kemp}
+\date{\today}
+\title{System Test Procedure}
+\hypersetup{
+ pdfauthor={Stanley C. Kemp},
+ pdftitle={System Test Procedure},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.2 (Org mode 9.4.4)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\section{Testing Requirements}
+\label{sec:org20de47c}
+\begin{itemize}
+\item Two players on computers
+\item An empty test server loaded with the game \texttt{Automata Football}
+\item A \emph{secure} and \emph{certain} internet connection for both players
+\begin{itemize}
+\item It shouldn't matter the browser they are in
+\end{itemize}
+\end{itemize}
+\section{The Test Procedure}
+\label{sec:org070a095}
+\begin{itemize}
+\item The players connect to the URL of the empty test server
+\begin{itemize}
+\item The players enter in any non-taken names
+\begin{itemize}
+\item If they have been taken, try again with a different name
+\item Repeat until they have been submitted successfully
+\end{itemize}
+\end{itemize}
+\item The players are in the lobby
+\begin{itemize}
+\item They assert that they are matched together
+\end{itemize}
+\item The players play against each other
+\begin{itemize}
+\item The players build gliders on their own sides of the court
+\begin{itemize}
+\item Any other game of life terms are fine too, we are checking to make sure that game of life works
+\end{itemize}
+\item The players submit their turns to the server, they should get feedback in the console of their browser that
+the information has been sent
+\begin{itemize}
+\item We are now checking to see whether the server recieves information
+\end{itemize}
+\item The players now see their side and the other side simulated for \textasciitilde{}20 secs
+\begin{itemize}
+\item The players see if the mechanics are right
+\end{itemize}
+\item The players compare the state of the game screen to see if they are the reverse
+\begin{itemize}
+\item We are checking to see if the game is the same for everyone, regardless of where or how they connect from
+\end{itemize}
+\end{itemize}
+\item One of the players disconnects
+\begin{itemize}
+\item They hit the \texttimes{} on the browser tab
+\begin{itemize}
+\item The browser tab closes
+\begin{itemize}
+\item We are checking to see if disconnection is handled correctly
+\end{itemize}
+\end{itemize}
+\item The other player receives a message that the other player has disconnected
+\item The other player is victorious
+\item The other player enters the lobby by hitting the "continue" button on the
+\end{itemize}
+\item The player who has disconnected reconnects
+\begin{itemize}
+\item They enter in their name
+\item They match with the other player
+\end{itemize}
+\item The players play one complete game
+\begin{itemize}
+\item We must assert that:
+\begin{itemize}
+\item The game has four rounds
+\item The game has the same mechanics as the Game of Life
+\item The game keeps score correctly
+\item The person who wins gets the victory screen
+\item The person who loses gets the defeat screen
+\end{itemize}
+\end{itemize}
+\item The players enter another game
+\begin{itemize}
+\item One of the players turns their wifi off
+\begin{itemize}
+\item We are testing to make sure that if one of the players has faulty internet that won't connect, that game is
+handled correctly.
+\end{itemize}
+\item The time limit for the player runs out
+\item The server tries to ping the client
+\begin{itemize}
+\item Does not receive a pong
+\end{itemize}
+\item The server behaves the same way that it would in the case of disconnection, in effect:
+\begin{itemize}
+\item The player who had faulty internet loses
+\item The other player wins the game
+\end{itemize}
+\end{itemize}
+\item One of the players enters practice mode
+\begin{itemize}
+\item Practice mode does not connect to the server through a web socket
+\item Practice mode simulates Conway's game of life
+\item The player creates a glider
+\item The player uses the \texttt{Step Forward} button to move the glider.
+\end{itemize}
+\item Everything is working as it should
+\end{itemize}
+\end{document}

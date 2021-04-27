@@ -1,0 +1,58 @@
+#+TITLE: System Test Procedure
+#+AUTHOR: Stanley C. Kemp
+#+OPTIONS: toc:nil
+* Testing Requirements
+  - Two players on computers
+  - An empty test server loaded with the game ~Automata Football~
+  - A /secure/ and /certain/ internet connection for both players
+    - It shouldn't matter the browser they are in 
+* The Test Procedure
+  - The players connect to the URL of the empty test server
+    - The players enter in any non-taken names
+      - If they have been taken, try again with a different name
+      - Repeat until they have been submitted successfully
+  - The players are in the lobby
+    - They assert that they are matched together
+  - The players play against each other
+    - The players build gliders on their own sides of the court
+      - Any other game of life terms are fine too, we are checking to make sure that game of life works
+    - The players submit their turns to the server, they should get feedback in the console of their browser that
+      the information has been sent
+      - We are now checking to see whether the server recieves information
+    - The players now see their side and the other side simulated for ~20 secs
+      - The players see if the mechanics are right
+    - The players compare the state of the game screen to see if they are the reverse
+      - We are checking to see if the game is the same for everyone, regardless of where or how they connect from
+  - One of the players disconnects
+    - They hit the \times on the browser tab
+      - The browser tab closes
+	- We are checking to see if disconnection is handled correctly
+    - The other player receives a message that the other player has disconnected
+    - The other player is victorious
+    - The other player enters the lobby by hitting the "continue" button on the
+  - The player who has disconnected reconnects
+    - They enter in their name
+    - They match with the other player
+  - The players play one complete game
+    - We must assert that:
+      - The game has four rounds
+      - The game has the same mechanics as the Game of Life
+      - The game keeps score correctly
+      - The person who wins gets the victory screen
+      - The person who loses gets the defeat screen
+  - The players enter another game
+    - One of the players turns their wifi off
+      - We are testing to make sure that if one of the players has faulty internet that won't connect, that game is
+	handled correctly.
+    - The time limit for the player runs out
+    - The server tries to ping the client
+      - Does not receive a pong
+    - The server behaves the same way that it would in the case of disconnection, in effect:
+      - The player who had faulty internet loses
+      - The other player wins the game
+  - One of the players enters practice mode
+    - Practice mode does not connect to the server through a web socket
+    - Practice mode simulates Conway's game of life
+    - The player creates a glider
+    - The player uses the ~Step Forward~ button to move the glider.
+  - Everything is working as it should
