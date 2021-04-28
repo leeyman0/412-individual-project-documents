@@ -1,0 +1,12 @@
+* And here's where I would put a GANNT chart\dots if I had one
+- I couldn't find the tools I needed to make a GANNT chart in time
+- More seriously, here is the plan
+  - Front-end functionality: Apr 28 - 29
+    - Get log-in page
+    - Get game page to function
+    - Get practice mode page to function
+  - Back-end functionality: Apr 30 - May 1
+    - Design the message encoding system
+    - Reuse the code that I have for this
+  - Registration: May 2
+    - Register and deploy my website
