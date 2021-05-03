@@ -84,7 +84,7 @@ certified.
       - [X] Get connection working through websockets
     - [X] Buy a website name
     - [X] Deploy to Heroku
-    - [ ] Fix SSL Error by waiting?!?
+    - [X] Fix SSL Error by waiting?!? Done
 ** Reference Materials
 * Project Organization
 This is a one-man-project, so not much time was spent on either Managerial Process or Project Organization.
