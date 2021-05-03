@@ -1,0 +1,3 @@
+[submodule "automata-football"]
+	path = automata-football
+	url = https://github.com/leeyman0/automata-football.git

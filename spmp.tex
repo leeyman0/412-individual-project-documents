@@ -1,4 +1,4 @@
-% Created 2021-04-24 Sat 20:25
+% Created 2021-05-02 Sun 22:53
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -28,9 +28,9 @@
 
 \maketitle
 \section{Introduction}
-\label{sec:orge253e25}
+\label{sec:org7e693b3}
 \subsection{Project Overview and History}
-\label{sec:orgcd7c887}
+\label{sec:orgcc8e471}
  This project is to create a small browser-based game that is similar in distribution style to \url{https://agar.io}.
 The program should be easy and simple to run on many machines, the ones that support the underlying technologies 
 of websockets and the 2D canvas should do it. The game should be made with accessibility and fun in mind, and there 
@@ -67,17 +67,22 @@ The engine behind it could be implemented within a matter of hours, and this mad
 a physics-based game.
 
 \subsection{Game Premise/Design}
-\label{sec:orgd0c5e4a}
+\label{sec:org0202cae}
 The turn-based aspect of the original design remains the same, allowing the backend code reuse. The goal for this game
 is simple --- have the most cells make it to your opponent's endzone. There would be a predetermined small number of
 turns, to keep games short and snappy. For each turn there are two parts, one where players build their mechanisms,
 and one where players can't do anything, but the computer would simulate a large number of turns for the player.
 Because of the nature of Conway's game of life, players could score own goals.
 
+\subsection{Anouncement!}
+\label{sec:org6fa99d0}
+The website is online at Heroku, still waiting on the custom domain\dots{} Google says that SSL should be up within
+the next 24 hours. So, you can find the game at \href{https://automata-football.herokuapp.com/}{Herokuapp} or at \href{https://www.playautomatafootball.page}{playautomatafootball.page} when the SSL becomes
+certified.
 \subsection{Project deliverables --- Work Breakdown Structure}
-\label{sec:orgec903cb}
-\subsubsection{{\bfseries\sffamily TODO} General Project Organization by April 27}
-\label{sec:orgb6dd73f}
+\label{sec:orgacaa491}
+\subsubsection{{\bfseries\sffamily DONE} General Project Organization by April 27}
+\label{sec:orgaeb727b}
 \begin{itemize}
 \item[{$\boxtimes$}] Update SPMP
 \begin{itemize}
@@ -90,66 +95,75 @@ Because of the nature of Conway's game of life, players could score own goals.
 \item[{$\boxtimes$}] Add Authenticated/Unauthenticated user
 \item[{$\boxtimes$}] Add Extra Admin Criterion
 \end{itemize}
-\item[{$\square$}] GANNT Chart
-\item[{$\square$}] System Test Procedure
-\item[{$\square$}] Milestone Review
+\item[{$\boxtimes$}] GANNT Chart
+\item[{$\boxtimes$}] System Test Procedure
+\item[{$\boxtimes$}] Milestone Review
 \end{itemize}
-\subsubsection{{\bfseries\sffamily TODO} Working Website by May 3}
-\label{sec:orgf002f4e}
+\subsubsection{{\bfseries\sffamily DONE} Working Website by May 3}
+\label{sec:org26f7888}
 \begin{itemize}
 \item[{$\boxtimes$}] Get underlying algorithm for Conway's game of Life up and running
-\item[{$\square$}] Make front-end
+\item[{$\boxtimes$}] Make front-end
 \begin{itemize}
-\item[{$\square$}] Name entry/Introduction
-\item[{$\square$}] Game queue
-\item[{$\square$}] Game
-\item[{$\square$}] Practice Mode
+\item[{$\boxtimes$}] Name entry/Introduction
+\item[{$\boxtimes$}] Game queue
+\item[{$\boxtimes$}] Game
+\begin{itemize}
+\item[{$\boxtimes$}] Functionality of Conways Game of Life
+\item[{$\boxtimes$}] Rounds
+\item[{$\boxtimes$}] Sending turns
+\item[{$\boxtimes$}] Receiving turns
 \end{itemize}
-\item[{$\boxminus$}] Make backend
+\item[{$\boxtimes$}] Practice Mode
+\end{itemize}
+\item[{$\boxtimes$}] Make backend
 \begin{itemize}
 \item[{$\boxtimes$}] Name System
 \item[{$\boxtimes$}] Matchmaking
-\item[{$\square$}] Moves
-\item[{$\square$}] Victory/Defeat/Disconnection
+\item[{$\boxtimes$}] Moves
+\item[{$\boxtimes$}] Victory/Defeat/Disconnection
+\item[{$\boxtimes$}] Continuation afterwards
 \end{itemize}
-\item[{$\square$}] Connect the Frontend to the Backend
+\item[{$\boxtimes$}] Testing
+\item[{$\boxtimes$}] Connect the Frontend to the Backend
 \begin{itemize}
-\item[{$\square$}] Develop a shared JSON code system, codes for each thing happening
-\item[{$\square$}] Get connection working through websockets
+\item[{$\boxtimes$}] Develop a shared JSON code system, codes for each thing happening
+\item[{$\boxtimes$}] Get connection working through websockets
 \end{itemize}
-\item[{$\square$}] Buy a website name
-\item[{$\square$}] Deploy to Heroku
+\item[{$\boxtimes$}] Buy a website name
+\item[{$\boxtimes$}] Deploy to Heroku
+\item[{$\square$}] Fix SSL Error by waiting?!?
 \end{itemize}
 \subsection{Reference Materials}
-\label{sec:orgcc7f1ae}
+\label{sec:orgdb9558f}
 \section{Project Organization}
-\label{sec:org807d7d8}
+\label{sec:org81921e3}
 This is a one-man-project, so not much time was spent on either Managerial Process or Project Organization.
 I usually take this apprioach to projects --- if it slows me down, I lose it, and if it speeds me up, I use it.
 However, with a project on the magnitude such as this one, some elaboration is needed.
 \subsection{Process Model}
-\label{sec:org3c03746}
+\label{sec:orgda9e738}
 The software process model I have chosen is the chaos model. The chaos model manages complexity by breaking
 problems into smaller sub-problems. There are two main rules to the chaos model of development.
 The first rule is, to solve big problems, solve the smaller problems that they rely on first, 
 then solve the intermediate problems that lead to the big problem being solved. The second rule is
 always work on the biggest issue first.
 \subsection{Organizational Structure}
-\label{sec:orgec1757e}
+\label{sec:org020338c}
 The model of the type of this organization is self-employment.
 \subsection{Organizational Interfaces}
-\label{sec:orge6e07c2}
+\label{sec:orgdd82e4a}
 \subsubsection{Relationship to Hosting Services}
-\label{sec:orgd3aaa0f}
+\label{sec:org45283ff}
 The hosting services are going to be alright, as long as I pay them for their work. If enough people join, I
 might have to upgrade the hosting to a bigger Dyno for Heroku, and I might have to upgrade hosting for the frontend
 as well.
 \subsubsection{Relationship to Players of The Game}
-\label{sec:orga87a640}
+\label{sec:org4f5c261}
 The relationship to the community of this game is very important, as it is an online game community, and if they
 aren't happy, they will go somewhere else.
 \subsection{Project Responsibilities}
-\label{sec:orgddfc7f8}
+\label{sec:org428fed2}
 \begin{itemize}
 \item Deliver a smooth gaming experience
 \begin{itemize}
@@ -159,7 +173,7 @@ aren't happy, they will go somewhere else.
 \item Be responsive to user feedback --- What needs fixing?
 \end{itemize}
 \subsection{Low-Level Responsibilities}
-\label{sec:org9c0ba7a}
+\label{sec:org2855c96}
 \begin{itemize}
 \item Programmer
 \begin{itemize}
@@ -173,9 +187,9 @@ aren't happy, they will go somewhere else.
 \end{itemize}
 \end{itemize}
 \section{Managerial Process}
-\label{sec:org381ea91}
+\label{sec:org745f5bf}
 \subsection{Change Management}
-\label{sec:org4b02aaa}
+\label{sec:orgd2ca751}
 To manage change in the development process, all serious technological changes will be made before programming.
 Minor changes can be made during the development process, of course, but once I am set on a method, tool,
 or technique, I cannot change it.
@@ -187,9 +201,9 @@ implement. More changes to the project check list will come soon.
 \textbf{Sub-Addendum: Apr 24, 2021.}
 Changes are now complete. 
 \section{Technical Process}
-\label{sec:org089bd56}
+\label{sec:org98634b3}
 \subsection{Methods, Tools, and Techniques}
-\label{sec:orgfe8e940}
+\label{sec:orge79e926}
 I plan to use these tools on this project:
 \begin{itemize}
 \item Javascript
