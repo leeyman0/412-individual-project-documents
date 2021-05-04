@@ -1,0 +1,45 @@
+* Automata Football
+  1. Good evening!
+  2. Hello, I am Stanley and this is my project, /automata football/.
+  3. What is /Automata Football/?
+     1. A simple quick online game based around Conway's Game of Life
+	1. Conway is an important mathematician, he devised this 
+	2. It isn't really a game
+	3. Conway's Game of Life is a cellular automaton
+	   1. What is a cellular automaton
+	      1. Similar to a turing machine or lambda calculus, as it can compute things
+	      2. The computation is turning the cells on or off
+	   2. An infinite grid of squares
+	      1. squares (or cells) can either be on or off
+	   3. Square rules:
+	      1. If a cell has more than three neighbors lit up, it is off next turn
+	      2. If a cell has less than 2 neighbors lit up, it is off next turn
+	      3. If a cell has exactly 3 neighbors lit up, it is on next turn
+	      4. If a cell has exactly 2 neighbors lit up and it is on, then it stays on next turn
+	   4. People can make complex structures with this automaton
+     2. The goal is simple:
+	1. Engineer automata by clicking on the cells
+	2. Reach the opponent's end zone --- Touchdown
+	3. Secure your own end zone
+	4. Every square that gets lit up in the opponent's endzone is a point for you
+	5. Four turns
+	6. Most points wins
+     3. Even though the goal is simple, the strategies have the capacity to be complex
+	1. Strategies stem from ambiguity
+	   1. Can't see the opponent's side of the screen
+	   2. Automata function
+	2. Many different outcomes based on placement and and structure
+  4. Demonstration time
+     1. Technical Details while demonstration is going
+	1. Server written as a node.js webapp
+	2. Backend can run on Heroku
+	3. Client written in ES6 JS (2015)
+	   1. Practically everything is based on JS, CSS, and HTML
+	4. Utilizes WebSockets for communication between the server and client
+	5. Uses interactive SVGs for graphics
+  5. Incomplete features
+     1. Practice mode --- play automata football by yourself, Conway's game of life
+	1. I can probably do it, I just need more time
+     2. Time limits to turns --- speed things up a bit
+	1. Requires a bit of communication through web sockets, and some computers are slower than others.
+     3. Canvas client --- Just in case the SVG doesn't support some systems

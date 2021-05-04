@@ -1,0 +1,109 @@
+% Created 2021-05-03 Mon 22:32
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{leeyman}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={leeyman},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.2 (Org mode 9.4.4)}, 
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\section{Automata Football}
+\label{sec:org928f8e5}
+\begin{enumerate}
+\item Good evening!
+\item Hello, I am Stanley and this is my project, \emph{automata football}.
+\item What is \emph{Automata Football}?
+\begin{enumerate}
+\item A simple quick online game based around Conway's Game of Life
+\begin{enumerate}
+\item Conway is an important mathematician, he devised this
+\item It isn't really a game
+\item Conway's Game of Life is a cellular automaton
+\begin{enumerate}
+\item What is a cellular automaton
+\begin{enumerate}
+\item Similar to a turing machine or lambda calculus, as it can compute things
+\item The computation is turning the cells on or off
+\end{enumerate}
+\item An infinite grid of squares
+\begin{enumerate}
+\item squares (or cells) can either be on or off
+\end{enumerate}
+\item Square rules:
+\begin{enumerate}
+\item If a cell has more than three neighbors lit up, it is off next turn
+\item If a cell has less than 2 neighbors lit up, it is off next turn
+\item If a cell has exactly 3 neighbors lit up, it is on next turn
+\item If a cell has exactly 2 neighbors lit up and it is on, then it stays on next turn
+\end{enumerate}
+\item People can make complex structures with this automaton
+\end{enumerate}
+\end{enumerate}
+\item The goal is simple:
+\begin{enumerate}
+\item Engineer automata by clicking on the cells
+\item Reach the opponent's end zone --- Touchdown
+\item Secure your own end zone
+\item Every square that gets lit up in the opponent's endzone is a point for you
+\item Four turns
+\item Most points wins
+\end{enumerate}
+\item Even though the goal is simple, the strategies have the capacity to be complex
+\begin{enumerate}
+\item Strategies stem from ambiguity
+\begin{enumerate}
+\item Can't see the opponent's side of the screen
+\item Automata function
+\end{enumerate}
+\item Many different outcomes based on placement and and structure
+\end{enumerate}
+\end{enumerate}
+\item Demonstration time
+\begin{enumerate}
+\item Technical Details while demonstration is going
+\begin{enumerate}
+\item Server written as a node.js webapp
+\item Backend can run on Heroku
+\item Client written in ES6 JS (2015)
+\begin{enumerate}
+\item Practically everything is based on JS, CSS, and HTML
+\end{enumerate}
+\item Utilizes WebSockets for communication between the server and client
+\item Uses interactive SVGs for graphics
+\end{enumerate}
+\end{enumerate}
+\item Incomplete features
+\begin{enumerate}
+\item Practice mode --- play automata football by yourself, Conway's game of life
+\begin{enumerate}
+\item I can probably do it, I just need more time
+\end{enumerate}
+\item Time limits to turns --- speed things up a bit
+\begin{enumerate}
+\item Requires a bit of communication through web sockets, and some computers are slower than others.
+\end{enumerate}
+\item Canvas client --- Just in case the SVG doesn't support some systems
+\end{enumerate}
+\end{enumerate}
+\end{document}
